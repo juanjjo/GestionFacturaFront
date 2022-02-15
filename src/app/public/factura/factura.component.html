@@ -1,38 +1,79 @@
 <div class="row">
-
-  <div class="input-group">
-    <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-    <div class="input-group-append">
-      <span class="input-group-text">$</span>
-      <span class="input-group-text">0.00</span>
+  <div class="col-12 pb-4 ">
+    <div class="row">
+        <div class="col-4">
+          <form class="form-inline"
+          novalidate
+            [formGroup]="formSearch"
+            >
+            <div class="form-group mx-sm-3 mb-2">
+              <input type="text"
+              class="form-control"
+              id="inputPassword2"
+              placeholder="Nombre cliente"
+              formControlName="nombreCliente"
+              required
+              >
+            </div>
+            <button (click)="findByCliente()" type="submit" class="btn btn-buscar mb-2">
+              <i class="fas fa-search mr-1"></i>buscar</button>
+          </form>
+        </div>
+        <div class="col-8">
+          <form class="form-inline"
+          [formGroup]="formFecha"
+          >
+            <label class="pr-2" for="desde">Desde</label>
+            <input class=""
+             type="date"
+             class="form-control"
+              id="desde"
+              formControlName="fechaDesde"
+              >
+            <label class="pr-2 pl-2" for="hasta">Hasta</label>
+            <input type="date"
+             class="form-control"
+              id="hasta"
+              formControlName="fechaHasta"
+              >
+            <button (click)="findByFecha()" type="submit" class="btn btn-buscar  ml-2">
+              <i class="fas fa-search mr-1"></i>buscar</button>
+        </form>
+        </div>
     </div>
   </div>
 
+
   <div class="col-12">
-    <ngx-datatable class="table-responsive material"
-     [rows]="rows"  [columnMode]="ColumnMode.flex"
-     [headerHeight]="50" [footerHeight]="50"
-    rowHeight="auto" ordering=false
-    [scrollbarH]="true">
-    <ngx-datatable-column name="ID" [width]="150" [sortable]=false >
+    <h2>Facturas</h2>
+    <ngx-datatable class="material" [limit]="10"
+     [rows]="rows"   [columnMode]="'force'"
+     [headerHeight]="50" [footerHeight]="50" [scrollbarV]="true"
+    ordering=false
+    [scrollbarH]="true"  [rowHeight]="50" >
+    <ngx-datatable-column name="ID"  [sortable]=false >
 
     </ngx-datatable-column>
-    <ngx-datatable-column name="FOLIO" [width]="150" [sortable]=false>
+    <ngx-datatable-column name="Folio" prop="folio"  [sortable]=false>
 
     </ngx-datatable-column>
-    <ngx-datatable-column name="DESCRIPCION" [width]="150" [sortable]=false>
+    <ngx-datatable-column name="Descrioción" prop="descripcion"  [sortable]=false>
 
     </ngx-datatable-column>
-    <ngx-datatable-column name="FECHA" [width]="150" [sortable]=false >
-
-    </ngx-datatable-column>
-
-    <ngx-datatable-column name="NOMBRE CLIENTE" [width]="150" [sortable]=false>
+    <ngx-datatable-column name="Fecha" prop="fecha"  [sortable]=false >
 
     </ngx-datatable-column>
 
-    <ngx-datatable-column name="ACCIONES" [width]="150" [sortable]=false>
+    <ngx-datatable-column name="Nombre Cliente" prop="nameCustomer"  [sortable]=false>
 
+    </ngx-datatable-column>
+
+    <ngx-datatable-column  name="ACCIONES"  [sortable]=false>
+      <ng-template  let-row="row" ngx-datatable-cell-template>
+        <a role="button" class="btn-buscar p-2"><i class="fas fa-edit"></i></a>
+        <a role="button" class="bg-danger  p-2"><i class="far fa-trash-alt " style="color: white;"></i></a>
+
+      </ng-template>
     </ngx-datatable-column>
 
   </ngx-datatable>

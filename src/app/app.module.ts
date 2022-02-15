@@ -7,6 +7,8 @@ import { PublicComponent } from './public/public.component';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,10 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
