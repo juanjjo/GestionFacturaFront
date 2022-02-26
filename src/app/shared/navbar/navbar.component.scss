@@ -1,0 +1,12 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  background-color: #F7F6FB;
+  z-index: 100;
+  transition: .5s;
+  height: 6%;
+  border-bottom: 0.5px solid rgb(226, 221, 221);
+}

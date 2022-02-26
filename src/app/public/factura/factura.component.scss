@@ -1,0 +1,38 @@
+
+// :host
+// ::ng-deep
+// .ngx-datatable.bootstrap:not(.cell-selection)
+// .datatable-body-row:hover,
+// :host
+// ::ng-deep
+// .ngx-datatable.material:not(.cell-selection)
+// .datatable-body-row:hover
+// .datatable-row-group {
+// background: red;
+// }
+
+:host
+::ng-deep
+.ngx-datatable.bootstrap:not(.cell-selection)
+.datatable-body-row:hover,
+:host
+::ng-deep
+.ngx-datatable.material:not(.cell-selection)
+.datatable-body-row{
+
+}
+
+:host
+::ng-deep
+.ngx-datatable.material:not(.cell-selection)
+.datatable-body-cell{
+
+}
+
+:host
+::ng-deep
+.ngx-datatable.material:not(.cell-selection)
+.datatable-body{
+
+}
+// datatable-body-row
