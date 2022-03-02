@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FacturaDetalleComponent } from './factura/factura-detalle/factura-detalle.component';
 import { FacturaComponent } from './factura/factura.component';
 import { PublicComponent } from './public.component';
 
@@ -10,9 +11,10 @@ const routes: Routes = [
     children:[
       {
         path:'factura',
-        component:FacturaComponent,
+        loadChildren: () => import('../public/factura/factura.module').then(m => m.FacturaModule)
       },
     ]
+
   }
 ];
 

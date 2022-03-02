@@ -19,12 +19,7 @@ export class FacturaComponent implements OnInit {
   constructor(private facturaServ:  FacturaService,private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.facturaServ.getListFactura().subscribe(
-      (result) =>{
-          this.rows = result;
-          console.log(this.rows);
-      }
-    )
+    this.loadingDatos();
 
     this.formSearch = this.fb.group({
       nombreCliente:  ['', [Validators.required]],
@@ -57,4 +52,20 @@ export class FacturaComponent implements OnInit {
 
   }
 
+
+  deleteFactura(id:number){
+    this.facturaServ.deleteContacto(id).subscribe(
+      (result)=>{
+        this.loadingDatos();
+      }
+    )
+  }
+
+  loadingDatos(){
+    this.facturaServ.getListFactura().subscribe(
+      (result) =>{
+        this.rows = result;
+    }
+    )
+  }
 }

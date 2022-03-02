@@ -4,12 +4,15 @@ import { FacturaComponent } from './public/factura/factura.component';
 
 const routes: Routes = [
 
-  { path: 'public',
+  {
+    path: '',
     loadChildren: () => import('./public/public.module').then(m => m.PublicModule)
   },
 
-  { path: '**',
-    redirectTo: 'public/factura'
+  {
+    path: '',
+    redirectTo: 'factura',
+    pathMatch: 'full',
   }
 ];
 

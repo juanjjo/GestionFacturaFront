@@ -50,4 +50,14 @@ headers: HttpHeaders = new HttpHeaders({
       }});
     }
 
+
+    deleteContacto(id:number):Observable<any>{
+      const httpOptions = {
+        headers : new HttpHeaders({
+          "Content-Type": "application/json"
+        })
+      }
+      return this.http.delete(this.apiFactura+'/'+id,httpOptions);
+    }
+
 }
