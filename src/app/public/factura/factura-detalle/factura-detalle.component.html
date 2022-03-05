@@ -1,3 +1,367 @@
-<p>
-  factura-detalle works!
-</p>
+<div class="p-0">
+  <div class="d-flex justify-content-center">
+      <div class="row">
+
+          <div class="col-12">
+            <h2 class="ml-2 ">Facturero</h2>
+              <div class="card">
+                  <div class="card-content">
+                      <div class="card-body">
+                      <form [formGroup]="FormFactura"
+                          novalidate
+
+                        class="mt-0"
+                      >
+
+                        <div class="row " >
+                          <div class="col-12 ">
+                              <div class="row d-flex justify-content-between">
+                                  <div class="col-12 col-lg-4 col-md-5">
+                                    <div class="form-group row">
+                                      <label for="use-date" class="col-sm-3 col-form-label">
+                                        Fecha</label>
+                                      <div class="col-sm-9">
+                                        <input
+                                        type="date"
+                                        id="use-date"
+                                        class="form-control form-control-sm"
+                                        placeholder="Username"
+
+                                        formControlName="date"
+                                        [ngClass]="{ 'is-invalid': this.FormFactura.get('date').errors && this.submittedFactura}"
+                                        />
+                                        <div class="invalid-feedback " *ngIf="this.FormFactura.get('date').errors">
+                                          <div *ngIf="this.FormFactura.get('date').errors.required">
+                                            El campo es requerido
+                                          </div>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-lg-4 col-md-5 ">
+                                    <div class="form-group row">
+                                      <label for="user-folio" class="col-sm-3 col-form-label">
+                                        Folio</label>
+                                      <div class="col-sm-9">
+                                        <input
+                                        type="text"
+                                        id="user-folio"
+                                        class="form-control form-control-sm"
+                                       formControlName="folio"
+
+                                       [ngClass]="{ 'is-invalid': this.FormFactura.get('folio').errors && this.submittedFactura}"
+                                       />
+                                       <div class="invalid-feedback " *ngIf="this.FormFactura.get('folio').errors">
+                                         <div *ngIf="this.FormFactura.get('folio').errors.required">
+                                           El campo es requerido
+                                         </div>
+                                       </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-12 mt-4 ">
+                            <div class="row">
+                                <div class="col-12 col-md-4 ">
+                                  <div class="form-group">
+                                    <div class="controls">
+                                      <label for="user-emial"
+                                        >Email Cliente </label
+                                      >
+                                      <input
+                                        type="email"
+                                        id="user-email"
+                                        class="form-control form-control-sm"
+
+                                        formControlName="eMailCliente"
+
+                                       [ngClass]="{ 'is-invalid': this.FormFactura.get('eMailCliente').errors && this.submittedFactura}"
+                                       />
+                                       <div class="invalid-feedback " *ngIf="this.FormFactura.get('eMailCliente').errors">
+                                         <div *ngIf="this.FormFactura.get('eMailCliente').errors.required">
+                                           El campo es requerido
+                                         </div>
+                                       </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                  <div class="form-group">
+                                    <div class="controls">
+                                      <label for="user-cliente-username"
+                                        >nombre cliente *
+                                      </label>
+                                      <input
+                                        type="text"
+                                        id="user-cliente-username"
+                                        class="form-control"
+                                        formControlName="nameCliente"
+
+                                        [ngClass]="{ 'is-invalid': this.FormFactura.get('nameCliente').errors && this.submittedFactura}"
+                                        />
+                                        <div class="invalid-feedback " *ngIf="this.FormFactura.get('nameCliente').errors">
+                                          <div *ngIf="this.FormFactura.get('nameCliente').errors.required">
+                                            El campo es requerido
+                                          </div>
+                                        </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                  <div class="controls">
+                                    <label for="users-lasname"
+                                      >Apellido Cliente *</label
+                                    >
+                                    <input
+                                      type="text"
+                                      id="users-lasname"
+                                      class="form-control"
+                                      formControlName="lastNameCliente"
+                                      [ngClass]="{ 'is-invalid': this.FormFactura.get('lastNameCliente').errors && this.submittedFactura}"
+                                      />
+                                      <div class="invalid-feedback " *ngIf="this.FormFactura.get('lastNameCliente').errors">
+                                        <div *ngIf="this.FormFactura.get('lastNameCliente').errors.required">
+                                          El campo es requerido
+                                        </div>
+                                      </div>
+
+                                  </div>
+                                </div>
+                            </div>
+
+                          </div>
+
+                          <div class="col-12 ">
+                            <div class="row">
+                                <div class=" col-md-6">
+                                  <div class="form-group">
+                                    <div class="controls">
+                                      <label for="users-descripcion"
+                                        >Descripcion *
+                                      </label>
+                                      <input
+                                        type="text"
+                                        id="users-descripcion"
+                                        class="form-control"
+                                        formControlName="description"
+                                        [ngClass]="{ 'is-invalid': this.FormFactura.get('description').errors && this.submittedFactura}"
+                                        />
+                                        <div class="invalid-feedback " *ngIf="this.FormFactura.get('description').errors">
+                                          <div *ngIf="this.FormFactura.get('description').errors.required">
+                                            El campo es requerido
+                                          </div>
+                                        </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class=" col-md-6">
+                                  <div class="form-group">
+                                    <div class="controls">
+                                      <label for="users-observacion"
+                                        >Observacion *
+                                      </label>
+                                      <input
+                                        type="text"
+                                        id="users-observacion"
+                                        class="form-control"
+                                        name="observation"
+                                        formControlName="observation"
+                                        [ngClass]="{ 'is-invalid': this.FormFactura.get('observation').errors && this.submittedFactura}"
+                                        />
+                                        <div class="invalid-feedback " *ngIf="this.FormFactura.get('observation').errors">
+                                          <div *ngIf="this.FormFactura.get('observation').errors.required">
+                                            El campo es requerido
+                                          </div>
+                                        </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+
+                          </div>
+
+                          <div class="col-12 ">
+                              <div class="row frm-center">
+                                  <div class="col-md-5">
+                                    <div class="form-group">
+                                      <div class="controls">
+                                        <label for="name-product"
+                                          >Producto *
+                                        </label>
+                                        <input
+                                          type="text"
+                                          id="name-product"
+                                          class="form-control "
+                                          formControlName="nameProduct"
+                                          [ngClass]="{ 'is-invalid': this.FormFactura.get('nameProduct').errors && this.submittedProduct}"
+                                          />
+                                          <div class="invalid-feedback " *ngIf="this.FormFactura.get('nameProduct').errors && this.submittedProduct">
+                                            <div *ngIf="this.FormFactura.get('nameProduct').errors">
+                                              El campo es requerido
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <div class="form-group">
+                                      <div class="controls">
+                                        <label for="product-price"
+                                          >Precio *
+                                        </label>
+                                        <input
+                                          type="text"
+                                          id="product-price"
+                                          class="form-control"
+                                          formControlName="productPrice"
+                                          [ngClass]="{ 'is-invalid': this.FormFactura.get('productPrice').errors && this.submittedProduct}"
+                                            />
+                                            <div class="invalid-feedback " *ngIf="this.FormFactura.get('productPrice').errors && this.submittedProduct">
+                                              <div *ngIf="this.FormFactura.get('productPrice').errors">
+                                                El campo es requerido
+                                              </div>
+                                            </div>
+
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <div class="row">
+                                      <div class="form-group col-6">
+                                        <div class="controls">
+                                          <label for="product-amount"
+                                            >Cantidad *
+                                          </label>
+                                          <input
+                                            type="text"
+                                            id="product-amount"
+                                            name="amount"
+                                            class="form-control"
+                                            formControlName="productAmount"
+                                            [ngClass]="{ 'is-invalid': this.FormFactura.get('productAmount').errors && this.submittedProduct}"
+                                            />
+                                            <div class="invalid-feedback " *ngIf="this.FormFactura.get('productAmount').errors && this.submittedProduct">
+                                              <div *ngIf="this.FormFactura.get('productAmount').errors">
+                                                El campo es requerido
+                                              </div>
+                                            </div>
+
+
+                                        </div>
+                                      </div>
+                                      <div class="col-4 col-lg-6 btn-center btn-form-produc ">
+                                        <button class="btn btn-success p-1 "
+                                          type="submit" data-toggle="modal"
+                                            (click)="loadDetalleStatic()"
+                                        >
+                                          <i class="fas fa-plus mr-1"></i>Agregar</button>
+                                      </div>
+                                    </div>
+
+
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div
+                            class="
+                              col-12
+                              d-flex
+                              justify-content-end
+                              flex-sm-row
+                              mt-3 mt-sm-2
+                            "
+                          >
+                            <ul class="list-inline m-0">
+                              <li class="list-inline-item"
+                              >
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  *ngIf="this.idFactura!=-1"
+                                  (click)="updateFactura()"
+                                >
+                                  Editar Factura
+                                </button>
+                              </li>
+
+                              <li
+                                class="list-inline-item"
+
+                              >
+                                <button
+                                type="submit"
+                                  class="btn btn-estyle  p-1"
+                                  *ngIf="this.idFactura==-1"
+                                    (click)="saveFactura()"
+                                >
+                                <i class="fas fa-save"></i> Facturar
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="text-danger" *ngIf="this.detallesSave.length==0 && this.submittedFactura">
+
+                            Al menos debe cargar un producto
+
+                        </div>
+                      </form>
+
+
+                      </div>
+                  </div>
+
+
+              </div>
+
+          </div>
+      </div>
+
+</div>
+
+<div class="row ">
+  <div class="col-12">
+    <h2 class="ml-2 mt-2">Detalle</h2>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+              <div class="col-12 p-0">
+                <ngx-datatable class="material" [limit]="5" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
+                [footerHeight]="50"  ordering=false [scrollbarH]="true" [rowHeight]="50" [scrollbarV]="true">
+                <ngx-datatable-column name="Producto" prop="producto.nombre" [sortable]=false>
+
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Precio" prop="producto.precio" [sortable]=false>
+
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Cantidad" prop="cantidad" [sortable]=false>
+                </ngx-datatable-column>
+
+
+                <ngx-datatable-column name="ACCIONES" [sortable]=false>
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+
+                    <span (click)="deleteDetalle(row)" role="button" class="btn-estyle  bg-danger p-2"><i
+                        class="far fa-trash-alt " style="color: white;"></i></span>
+
+                  </ng-template>
+                </ngx-datatable-column>
+
+              </ngx-datatable>
+
+
+              </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

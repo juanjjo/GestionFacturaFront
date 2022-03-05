@@ -1,0 +1,81 @@
+
+// :host
+// ::ng-deep
+// .ngx-datatable.bootstrap:not(.cell-selection)
+// .datatable-body-row:hover,
+// :host
+// ::ng-deep
+// .ngx-datatable.material:not(.cell-selection)
+// .datatable-body-row:hover
+// .datatable-row-group {
+// background: red;
+// }
+
+// :host
+// ::ng-deep
+// .ngx-datatable.bootstrap:not(.cell-selection)
+// .datatable-body-row:hover,
+// :host
+// ::ng-deep
+// .ngx-datatable.material:not(.cell-selection)
+// .datatable-body-row{
+
+// }
+
+:host
+::ng-deep
+.ngx-datatable.material:not(.cell-selection)
+.datatable-body-cell{
+  display: flex;
+  align-items: center;
+  justify-content: center
+
+}
+
+:host
+::ng-deep
+.ngx-datatable.material:not(.cell-selection)
+.datatable-header-cell{
+  text-align: center;
+
+ }
+
+.edit-but{
+
+}
+// :host
+// ::ng-deep
+// .ngx-datatable.material:not(.cell-selection)
+// .datatable-header{
+//   background-color: red;
+
+
+// }
+// datatable-body-row
+
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  .ngx-datatable {
+    height: 250px;
+  }
+}
+
+
+
+.frm-center{
+  display: flex;
+  justify-content: space-between;
+}
+.btn-form-produc{
+  margin-top: 2rem;
+}
+
+.btn-estyle{
+  background-color: #005A9E;
+  color: white;
+  border-radius: 4px;
+  margin-right: 5px;
+}

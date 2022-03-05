@@ -59,10 +59,17 @@
   width: 100%;
   height: 100%;
   .ngx-datatable {
-    height: 100vh;
+    height: 500px;
   }
 }
 .btn-buscar{
+  background-color: #005A9E;
+  color: white;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+.btn-search{
+  padding: 10px;
   background-color: #005A9E;
   color: white;
   border-radius: 4px;

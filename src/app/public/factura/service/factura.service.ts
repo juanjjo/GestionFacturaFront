@@ -7,12 +7,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class FacturaService {
-  nameCliente:string;
   apiFactura = environment.apiURL + 'factura';
 
+constructor(private http: HttpClient) {
 
-
-constructor(private http: HttpClient) { }
+ }
 
 headers: HttpHeaders = new HttpHeaders({
   'Content-Type': 'application/json',
@@ -59,5 +58,7 @@ headers: HttpHeaders = new HttpHeaders({
       }
       return this.http.delete(this.apiFactura+'/'+id,httpOptions);
     }
+
+
 
 }

@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   exports:[
     NavbarComponent
@@ -17,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
+
   ]
 })
 export class SharedModule {

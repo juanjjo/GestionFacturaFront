@@ -8,7 +8,6 @@ import { FacturaDetalleComponent } from './factura-detalle/factura-detalle.compo
 import { FacturaRoutingModule } from './factura-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
 
   declarations: [
@@ -22,6 +21,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     NgxDatatableModule,
     FormsModule,
     ReactiveFormsModule,
+
   ]
 })
 export class FacturaModule { }
