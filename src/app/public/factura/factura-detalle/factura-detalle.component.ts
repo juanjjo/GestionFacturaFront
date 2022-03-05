@@ -50,7 +50,6 @@ export class FacturaDetalleComponent implements OnInit {
   this.data$.subscribe(
     result=>{
       this.idFactura = result;
-      console.log(this.idFactura);
     }
   );
 
@@ -64,7 +63,7 @@ export class FacturaDetalleComponent implements OnInit {
     this.rows = this.detallesSave;
 
     this.FormFactura = this.fb.group({
-      date: [new Date(), Validators.required],
+      date: ['', Validators.required],
       folio: ['', Validators.required],
       eMailCliente: ['', Validators.required],
       nameCliente: ['', Validators.required],
@@ -188,7 +187,6 @@ export class FacturaDetalleComponent implements OnInit {
 
   updateFactura(){
     this.loadFactura();
-    console.log(this.factura.fecha.toString);
     if(this.FormFactura.get('folio').valid && this.FormFactura.get('nameCliente').valid
     && this.FormFactura.get('lastNameCliente').valid && this.FormFactura.get('observation').valid
     && this.FormFactura.get('description').valid && this.FormFactura.get('eMailCliente').valid
@@ -210,13 +208,10 @@ export class FacturaDetalleComponent implements OnInit {
     this.facturaDetalleServi.getById(this.idFactura).subscribe(
       result=>{
         this.factura= result;
-        //his.factura.cliente.id = result['cliente']['id'];
-        //console.log(this.factura);
         this.loadFormularioFactura();
 
       }
     )
-    //this.loadFormularioFactura();
   }
 
 

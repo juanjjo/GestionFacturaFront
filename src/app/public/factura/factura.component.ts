@@ -39,7 +39,6 @@ export class FacturaComponent implements OnInit {
   ngOnInit() {
     if(this.idReloadRow==-1){
      this.loadingDatos();
-     console.log(this.idReloadRow);
     }
     this.loadingDatos();
     //this.loadingDatos();
@@ -66,7 +65,6 @@ export class FacturaComponent implements OnInit {
     let hasta : string =this.formFecha.value.fechaHasta;
     this.facturaServ.getListFacturaByFecha(desde,hasta).subscribe(
         (result)=>{
-          console.log(result);
           this.rows = result;
 
         }
