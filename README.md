@@ -1,6 +1,10 @@
 # GestionFacturaFront
 
+# Tecnologias 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+
+Node v12.11.0
+
 
 ## Development server
 
